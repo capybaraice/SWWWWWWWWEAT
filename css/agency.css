@@ -1,86 +1,153 @@
+p {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin-right: 100px;
+  margin-left: 100px;
+ }
+body {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+#Spin_horse{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 100px;
+  margin-left: 100px;
+}
 
-.navbar-custom {
-  background-color: #e9c998;
-  border-color: transparent;
+.navbar a {
+  text-align: left;
 }
-.navbar-custom .navbar-brand {
-  color: #ebad74;/*左上logo顏色*/
-  font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
+
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
 }
-.navbar-custom .navbar-brand:hover,
-.navbar-custom .navbar-brand:focus,
-.navbar-custom .navbar-brand:active,
-.navbar-custom .navbar-brand.active {
-  color: #6d2f2f;
+
+
+/*側拉選單*/
+html,
+body {
+  height: 100%;
 }
-.navbar-custom .navbar-collapse {
-  border-color: rgba(235, 211, 161, 0.02);
+
+body {
+  background-color: #546377;
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
 }
-.navbar-custom .navbar-toggle {
-  background-color: #fed136;
-  border-color: #fed136;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  color: white;
-  font-size: 12px;
+
+a {
+  text-decoration: none;
+  font-weight: 300;
 }
-.navbar-custom .navbar-toggle:hover,
-.navbar-custom .navbar-toggle:focus {
-  background-color: #fed136;
+
+a:hover {
+  color: yellow;
 }
-.navbar-custom .nav li a {/*navbar右上字*/
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-weight: 400;
-  letter-spacing: 1px;
-  color: #ebad74;
+
+a,
+label {
+  cursor: pointer;
 }
-.navbar-custom .nav li a:hover,
-.navbar-custom .nav li a:focus {
-  color: #fed136;
+
+.sideMenu {
+  width: 300px;
+  height: 100%;
+  background-color: #e6a569;
+  border-right: 3px solid #d1d1d1;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0;
+  box-shadow: 5px 0 5px rgba(23, 23, 54, 0.6);
+  position: relative;
+  transform: translateX(-100%);
+  transition: 0.5s;
+}
+
+.sideMenu form {
+  display: flex;
+  margin: 0 10px 50px;
+  border-radius: 100px;
+  border: 1px solid #fff;
+}
+
+.sideMenu form input {
+  width: 230px;
+}
+
+.sideMenu form button {
+  width: 50px;
+}
+
+.sideMenu form input,
+.sideMenu form button {
+  border: none;
+  padding: 5px 10px;
+  background-color: transparent;
+  color: #fff;
+}
+
+.sideMenu form input:focus,
+.sideMenu form button:focus {
   outline: none;
 }
-.navbar-custom .navbar-nav > .active > a {
-  border-radius: 0;
-  color: white;
-  background-color: #fed136;
+
+.sideMenu label {
+  width: 20px;
+  height: 80px;
+  background-color: #d1d1d1;
+  color: #686666;
+  position: absolute;
+  right: -20px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  line-height: 80px;
+  text-align: center;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 5px 0 5px rgba(23, 23, 54, 0.6);
 }
-.navbar-custom .navbar-nav > .active > a:hover,
-.navbar-custom .navbar-nav > .active > a:focus {
-  color: white;
-  background-color: #fec503;
+
+#sideMenu-active:checked + .sideMenu {
+  transform: translateX(0);
 }
-@media (min-width: 768px) {
-  .navbar-custom {
-    background-color: transparent;
-    padding: 25px 0;
-    -webkit-transition: padding 0.3s;
-    -moz-transition: padding 0.3s;
-    transition: padding 0.3s;
-    border: none;
-  }
-  .navbar-custom .navbar-brand {
-    font-size: 2em;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
-  }
-  .navbar-custom .navbar-nav > .active > a {
-    border-radius: 3px;
-  }
+
+#sideMenu-active:checked + .sideMenu label .fas {
+  transform: scaleX(-1);
 }
-@media (min-width: 768px) {
-  .navbar-custom.affix {
-    background-color: #ffffff; /*navbar顏色*/
-    border-color: #e9c99800#e9c99800#1d1407#e9c99800;
-    border-width:1px;
-    border-style:solid;
-    padding: 10px 0;
-  }
-  .navbar-custom.affix .navbar-brand {
-    font-size: 1.5em;
-  }
+
+#sideMenu-active {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
 }
-header {
-  color: white;
+
+nav a {
+  display: block;
+  color: #fff;
+  padding: 20px 10px;
+  position: relative;
 }
+
+nav a .fas {
+  margin-right: -1.1em;
+  transform: scale(0);
+  transition: 0.3s;
+}
+
+nav a:hover .fas {
+  margin-right: 0em;
+  transform: scale(1);
+}
+
+nav a + a::before {
+  content: "";
+  position: absolute;
+  border-top: 1px dashed #ffffff;
+  left: 10px;
+  right: 10px;
+  top: 0px;
+}
+
+/*選單結束*/
